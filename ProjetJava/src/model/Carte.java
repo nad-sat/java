@@ -13,12 +13,21 @@ public class Carte {
 	private int id;
 	private String nom;
 	private double gain;
+	private Image image;
 
-	public Carte(int id, String nom, Double gain) {
+
+	public Carte(int id, String nom, double gain, Image image) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.gain = gain;
+		this.image = image;
+	}
+
+
+	public Carte() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 
@@ -55,6 +64,17 @@ public class Carte {
 	public void setGain(double gain) {
 		this.gain = gain;
 	}
+
+	
+	public Image getImage() {
+		return image;
+	}
+
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
+
 
 	/**
 	 * @param args
