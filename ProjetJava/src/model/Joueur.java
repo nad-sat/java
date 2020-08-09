@@ -12,21 +12,26 @@ import java.util.ArrayList;
 public class Joueur {
 	private int id;
 	private String nom;
-	private ArrayList<Carte> cartes;
+	private ArrayList<Carte> cartes = new ArrayList<Carte>();
 	private boolean joueurAction = false;
 	
 // constructeurs 
-	
-	public Joueur(int id, String nom, boolean joueurAction) {
+	@Deprecated
+	public Joueur(int id, String nom, ArrayList<Carte> cartes) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.cartes = cartes;
-		this.joueurAction = joueurAction;
-		Carte.cartes.add(this);
 	}
-
-
+	public Joueur(int id, String nom,Carte[] cartes) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		for(Carte cartelist:cartes) {
+			this.cartes.add(cartelist);
+		}
+		
+	}
 // Getters et Setters
 
 	public int getId() {
@@ -64,21 +69,4 @@ public class Joueur {
 	}
 	
 	
-	/**public static Joueur creationJoueur(Carte[] carte) {
-		Joueur j = null;
-		
-		//TODO 
-		
-		return j;
-	}*/
-	
-	public static final Joueur joueur1 = new Joueur(1,"Tom",Carte.carte1,false);
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 }

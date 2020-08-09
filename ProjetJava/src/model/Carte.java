@@ -34,11 +34,9 @@ public class Carte {
 	}
 
 
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 
 	public String getNom() {
@@ -46,17 +44,14 @@ public class Carte {
 	}
 
 
-
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
 
 
-
 	public double getGain() {
 		return gain;
 	}
-
 
 
 	public void setGain(double gain) {
@@ -68,17 +63,14 @@ public class Carte {
 		return image;
 	}
 
-
 	public void setImage(Image image) {
 		this.image = image;
 	}
-	
 	
 
 	public static ArrayList<Carte> getCarteList() {
 		return carteList;
 	}
-
 
 
 	public static void setCarteList(ArrayList<Carte> carteList) {
@@ -108,9 +100,5 @@ public class Carte {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	
 }

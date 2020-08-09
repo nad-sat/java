@@ -57,14 +57,6 @@ public class Image {
 		this.locationImg = locationImg;
 	}
 
-/**	public static Image creationImage() {
-		Image i = null;
-		
-		//TODO
-		
-		return i;
-	}
-*/
 
 	public static final Image image1 = new Image(0,"elephant","");
 	public static final Image image2 = new Image(1,"lion","");
@@ -75,12 +67,5 @@ public class Image {
 	public static final Image image7 = new Image(6, "loup", "");
 	public static final Image image8 = new Image(7, "oiseau", "");
 	
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

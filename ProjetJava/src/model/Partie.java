@@ -11,25 +11,28 @@ import java.util.ArrayList;
  */
 public class Partie {
 	private int id;
-	private ArrayList<Joueur> listeJoueurs;
-	private int tour;
+	private ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>(); ;
+	private int tour = 1 ;
 	private long debutJeu;
 	private long finJeu;
 	private Joueur vainqueur;
 	
-	
-	
-	public Partie(int id, ArrayList<Joueur> listeJoueurs, int tour, long debutJeu, long finJeu, Joueur vainqueur) {
+	@Deprecated
+
+	public Partie(int id, ArrayList<Joueur> listeJoueurs, long debutJeu) {
 		super();
 		this.id = id;
 		this.listeJoueurs = listeJoueurs;
-		this.tour = tour;
 		this.debutJeu = debutJeu;
-		this.finJeu = finJeu;
-		this.vainqueur = vainqueur;
-	}
 
-	
+	}
+	public Partie(int id,Joueur[]listeJoueurs,long debutJeu ) {
+		super();
+		this.id = id;
+		for(Joueur joueurs:listeJoueurs) {
+			this.listeJoueurs.add(joueurs);}
+		this.debutJeu = debutJeu;
+	}
 	public int getId() {
 		return id;
 	}
@@ -96,9 +99,5 @@ public class Partie {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 
 }
