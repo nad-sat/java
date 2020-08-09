@@ -17,12 +17,13 @@ public class Joueur {
 	
 // constructeurs 
 	
-	public Joueur(int id, String nom, ArrayList<Carte> cartes, boolean joueurAction) {
+	public Joueur(int id, String nom, boolean joueurAction) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.cartes = cartes;
 		this.joueurAction = joueurAction;
+		Carte.cartes.add(this);
 	}
 
 
@@ -61,13 +62,17 @@ public class Joueur {
 	public void setJoueurAction(boolean joueurAction) {
 		this.joueurAction = joueurAction;
 	}
-	public static Joueur creationJoueur(Carte[] carte) {
+	
+	
+	/**public static Joueur creationJoueur(Carte[] carte) {
 		Joueur j = null;
 		
 		//TODO 
 		
 		return j;
-	}
+	}*/
+	
+	public static final Joueur joueur1 = new Joueur(1,"Tom",Carte.carte1,false);
 	/**
 	 * @param args
 	 */

@@ -57,14 +57,24 @@ public class Image {
 		this.locationImg = locationImg;
 	}
 
-	public static Image creationImage() {
+/**	public static Image creationImage() {
 		Image i = null;
 		
 		//TODO
 		
 		return i;
 	}
+*/
 
+	public static final Image image1 = new Image(0,"elephant","");
+	public static final Image image2 = new Image(1,"lion","");
+	public static final Image image3 = new Image(2,"girafe","");
+	public static final Image image4 = new Image(3, "chien", "");
+	public static final Image image5 = new Image(4, "lapin", "");
+	public static final Image image6 = new Image(5, "chat", "");
+	public static final Image image7 = new Image(6, "loup", "");
+	public static final Image image8 = new Image(7, "oiseau", "");
+	
 	/**
 	 * @param args
 	 */

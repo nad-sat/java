@@ -3,6 +3,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  * @author nadia
  *
@@ -14,7 +16,7 @@ public class Carte {
 	private String nom;
 	private double gain;
 	private Image image;
-
+	private static ArrayList<Carte> carteList = new ArrayList<Carte>();
 
 	public Carte(int id, String nom, double gain, Image image) {
 		super();
@@ -22,13 +24,9 @@ public class Carte {
 		this.nom = nom;
 		this.gain = gain;
 		this.image = image;
+		Carte.carteList.add(this);
 	}
 
-
-	public Carte() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 
 	public int getId() {
@@ -75,7 +73,21 @@ public class Carte {
 		this.image = image;
 	}
 	
-	public static Carte creationCarte(Image image) {
+	
+
+	public static ArrayList<Carte> getCarteList() {
+		return carteList;
+	}
+
+
+
+	public static void setCarteList(ArrayList<Carte> carteList) {
+		Carte.carteList = carteList;
+	}
+
+
+
+/**	public static Carte creationCarte(Image image) {
 		Carte c = null;
 		
 		//TODO
@@ -83,8 +95,16 @@ public class Carte {
 		return c;
 	}
 	
-
-
+*/	
+	public static final Carte carte1 = new Carte(0,"carte1",10,Image.image1);
+	public static final Carte carte2 = new Carte(1,"carte2",9,Image.image2);
+	public static final Carte carte3 = new Carte(2,"carte3",8,Image.image3);
+	public static final Carte carte4 = new Carte(3,"carte4",7,Image.image4);
+	public static final Carte carte5 = new Carte(4,"carte5",6,Image.image5);
+	public static final Carte carte6 = new Carte(5,"carte6",5,Image.image6);
+	public static final Carte carte7 = new Carte(6,"carte5",4,Image.image7);
+	public static final Carte carte8 = new Carte(7,"carte7",3,Image.image8);
+	
 	/**
 	 * @param args
 	 */
