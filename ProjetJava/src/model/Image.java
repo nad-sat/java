@@ -57,7 +57,13 @@ public class Image {
 		this.locationImg = locationImg;
 	}
 
-
+	public static Image creationImage() {
+		Image i = null;
+		
+		//TODO
+		
+		return i;
+	}
 
 	/**
 	 * @param args

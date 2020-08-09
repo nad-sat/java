@@ -61,7 +61,13 @@ public class Joueur {
 	public void setJoueurAction(boolean joueurAction) {
 		this.joueurAction = joueurAction;
 	}
-
+	public static Joueur creationJoueur(Carte[] carte) {
+		Joueur j = null;
+		
+		//TODO 
+		
+		return j;
+	}
 	/**
 	 * @param args
 	 */

@@ -74,6 +74,15 @@ public class Carte {
 	public void setImage(Image image) {
 		this.image = image;
 	}
+	
+	public static Carte creationCarte(Image image) {
+		Carte c = null;
+		
+		//TODO
+		
+		return c;
+	}
+	
 
 
 	/**
