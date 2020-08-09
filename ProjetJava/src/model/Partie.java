@@ -11,12 +11,12 @@ import java.util.ArrayList;
  */
 public class Partie {
 	private int id;
-	private ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>(); ;
+	private ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>(); 
 	private int tour = 1 ;
 	private long debutJeu;
 	private long finJeu;
 	private Joueur vainqueur;
-	
+	private ArrayList<Carte> carteListpartie = new ArrayList<Carte>();
 	@Deprecated
 
 	public Partie(int id, ArrayList<Joueur> listeJoueurs, long debutJeu) {
@@ -93,6 +93,12 @@ public class Partie {
 
 	public void setVainqueur(Joueur vainqueur) {
 		this.vainqueur = vainqueur;
+	}
+	public ArrayList<Carte> getCarteListpartie() {
+		return carteListpartie;
+	}
+	public void setCarteListpartie(ArrayList<Carte> carteListpartie) {
+		this.carteListpartie = carteListpartie;
 	}
 
 

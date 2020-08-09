@@ -4,6 +4,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author nadia
@@ -77,8 +78,21 @@ public class Carte {
 		Carte.carteList = carteList;
 	}
 
+ // COMPARAISON DE DEUX CARTES
 
-
+	public static  boolean CompareCarte(Carte s1,Carte s2) {
+		
+		if (s1.equals(s2)) { 
+			return true ;
+		}
+		else  return false;
+	}
+//mélange les cartes du jeu
+	public  static void  melangeCarte( Partie p) {
+	 Collections.shuffle(p.getCarteListpartie());
+		
+	};
+	
 /**	public static Carte creationCarte(Image image) {
 		Carte c = null;
 		
