@@ -100,8 +100,32 @@ public class Partie {
 	public void setCarteListpartie(ArrayList<Carte> carteListpartie) {
 		this.carteListpartie = carteListpartie;
 	}
-
-
+   //  si toute les cartes ont été jouées
+	 public boolean allfoundCarte() {
+		 boolean foundcarte = true;
+		 for (Carte c: this.getCarteListpartie()) {
+			 if (c.isFoundcarte()== false) {
+				 foundcarte= false;
+			 }
+		 }
+		 
+		 return foundcarte ;
+	 }
+	 // methode qui arrete le jeu
+	 
+	 public void stopPartie(){
+		 boolean stopPartie = this.allfoundCarte();
+		 if(stopPartie == true)
+		 {
+			 Util.print( "la partie est terminée",0);
+			 for (Joueur j : this.getListeJoueurs()) {
+				 j.compteGain();
+			 }
+			 
+		 }
+		 
+		 }
+	 
 	/**
 	 * @param args
 	 */

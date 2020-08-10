@@ -17,6 +17,7 @@ public class Carte {
 	private String nom;
 	private double gain;
 	private Image image;
+	private boolean foundcarte = false;
 	private static ArrayList<Carte> carteList = new ArrayList<Carte>();
 
 	public Carte(int id, String nom, double gain, Image image) {
@@ -93,6 +94,14 @@ public class Carte {
 		
 	};
 	
+	public boolean isFoundcarte() {
+		return foundcarte;
+	}
+
+	public void setFoundcarte(boolean foundcarte) {
+		this.foundcarte = foundcarte;
+	}
+
 /**	public static Carte creationCarte(Image image) {
 		Carte c = null;
 		

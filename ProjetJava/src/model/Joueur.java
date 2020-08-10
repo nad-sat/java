@@ -85,15 +85,20 @@ public class Joueur extends Observable {
 		if (this.isJoueurAction()== false) {
 			return ;
 		}
-		Util.print( "le" +this.nom+ " a sélectionné une carte " + c.getImage().getNom(),0);
+		// empeche le joueur d'utiliser la carte trouvée
+		if (c.isFoundcarte()== true) {
+			return ;
+		}
+		Util.print( "le joueur " +this.nom+ " a sélectionné une carte " + c.getImage().getNom(),0);
 		this.getSelectionCarte().add(c);
 		//vérifier si on a deux cartes et comparer les deux cartes
 		if (this.getSelectionCarte().size()==2) {
 			boolean b = Carte.CompareCarte(this.getSelectionCarte().get(0),this.getSelectionCarte().get(1)) ;
 		
 			if (b== true) {
-			//supprimer les deux cartes de la parties
-				Main.game.getCarteListpartie().removeAll(this.getSelectionCarte());
+			//déja trouvé les deux cartes de la parties
+				this.getSelectionCarte().get(0).setFoundcarte(true);
+				this.getSelectionCarte().get(1).setFoundcarte(true);
 			//ajouter dans la liste des joueurs	
 				this.getCartes().addAll(this.getSelectionCarte());
 			 // supprimer tout de la sélection 
@@ -101,17 +106,36 @@ public class Joueur extends Observable {
 				Util.print( "les deux cartes sont les même",0);
 			}
 			else if (b==false) {
+				Util.print( "les deux cartes ne sont pas les même",0);
+				 for(Joueur j : Main.game.getListeJoueurs() ){
+					 
+					 if (!j.equals(this)) {
+						 j.setJoueurAction(true);
+							// lorsque le joueur fini avec la console , l'autre prend la main 
+							 Main.control.setModel(j);
+							 Main.console.setModel(j);
+							 Util.print( "c'est au tour du joueur "+j.getNom(),0);
+					 }
+					 
+				 }
+
 				this.getSelectionCarte().clear();
 				this.setJoueurAction(false);
-				Util.print( "les deux cartes ne sont pas les même",0);
+				
 			}
-			 // bloquer le joueur et passer la main 
-			
-			
+			 //arreter le jeu
+			Main.game.stopPartie();	
 		}
-		
-		
 			
 	}
 	
+	public double compteGain(){
+		double gain = 0.0;
+		for (Carte c:this.getCartes()) {
+			gain += c.getGain();
+		}
+		Util.print( "le joueur " +this.nom+ " a gagné : " +gain+" euros" ,0);
+		return gain;
+				
+	}
 }

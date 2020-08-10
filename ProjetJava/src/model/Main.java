@@ -3,6 +3,10 @@
  */
 package model;
 
+import controller.Controller;
+import view.ConsoleView;
+import view.View;
+
 /**
  * @author nadia
  *
@@ -12,6 +16,8 @@ public class Main {
 	// récupération de la partie dans n'importe quelle classe
 	
 	public static Partie game;
+	public static Controller control;
+	public static View console;
 	/**
 	 * @param args
 	 */
@@ -26,12 +32,23 @@ public class Main {
 		game  = new Partie(1,new Joueur[]{j1,j2},System.currentTimeMillis());
 		game.getCarteListpartie().addAll(Carte.getCarteList());
 		game.getCarteListpartie().addAll(Carte.getCarteList());
+		
+		control = new Controller(j1);
+		console = new ConsoleView(j1,control);
+		control.addView(console);
+		
+		
+		//game.getCarteListpartie().add(Carte.carte1);
+		//game.getCarteListpartie().add(Carte.carte1);
+		
         Carte.melangeCarte(game);
 		//  afficher l 'info de la partie 
+        
+        
 	     Util.print("partie numero "+game.getId(),0);
 	    
-	    j1.carteSelection(game.getCarteListpartie().get(0)); 
-	    j1.carteSelection(game.getCarteListpartie().get(1));  
+	   // j1.carteSelection(game.getCarteListpartie().get(0)); 
+	   //j1.carteSelection(game.getCarteListpartie().get(1));  
 	    
 	}
 

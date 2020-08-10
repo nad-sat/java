@@ -22,9 +22,11 @@ public class ConsoleView extends View {
 			while(true) {
 				try {
 					String c=scanner.next();
-					
+					// selection de carte 
 					switch(c){
-					
+						case "select":
+							int carte = scanner.nextInt();
+							controller.commandSelection(carte);
 					}
 				}
 				catch(InputMismatchException e) {

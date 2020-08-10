@@ -17,7 +17,7 @@ public class Image {
 	public Image(int id, String nom, String locationImg) {
 		super();
 		this.id = id;
-		this.nom = nom;
+		this.nom = nom;  
 		this.locationImg = locationImg;
 	}
 
