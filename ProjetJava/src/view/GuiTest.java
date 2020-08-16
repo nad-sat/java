@@ -1,14 +1,15 @@
 package view;
 
+import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.EventQueue;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
-import java.awt.Color;
-import java.awt.Cursor;
-import javax.swing.JSlider;
 
 public class GuiTest {
 
@@ -188,6 +189,19 @@ public class GuiTest {
 		panel16.setBackground(UIManager.getColor("PasswordField.selectionForeground"));
 		panel16.setBounds(700,700, 150, 150);
 		frame.getContentPane().add(panel16);
+			
+	}
+	// ajouter un mouselistener sur les panel
+	public static void clickbouton(GuiTest gui, JPanel p, int v) {
+		p.addMouseListener(new MouseAdapter() {
+			// 
+		@Override	
+		public void mousePressed(MouseEvent e) {
+			
+			
+		}
+			
+		});
 		
 	}
 }

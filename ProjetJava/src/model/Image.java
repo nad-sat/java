@@ -4,7 +4,9 @@
 package model;
 
 /**
+ * 
  * @author nadia
+ * 
  *
  */
 public class Image {
@@ -27,36 +29,26 @@ public class Image {
 		return id;
 	}
 
-
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-
 
 	public String getNom() {
 		return nom;
 	}
 
-
-
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
-
 
 	public String getLocationImg() {
 		return locationImg;
 	}
 
-
-
 	public void setLocationImg(String locationImg) {
 		this.locationImg = locationImg;
 	}
-
+// Création des images 
 
 	public static final Image image1 = new Image(0,"elephant","");
 	public static final Image image2 = new Image(1,"lion","");

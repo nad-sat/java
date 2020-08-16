@@ -111,7 +111,15 @@ public class Partie {
 		 
 		 return foundcarte ;
 	 }
-	 // methode qui arrete le jeu
+	 
+	 
+	 /**
+	 * Une methode qui arrete le jeu une fois quand toute les cartes ont été jouées
+	 * @return  
+	 *  Une méthode CompareCarte qui permet de comparer deux cartes 
+	 *
+	 */
+	
 	 
 	 public void stopPartie(){
 		 boolean stopPartie = this.allfoundCarte();

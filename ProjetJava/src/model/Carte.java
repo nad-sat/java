@@ -18,15 +18,25 @@ public class Carte {
 	private double gain;
 	private Image image;
 	private boolean foundcarte = false;
-	private static ArrayList<Carte> carteList = new ArrayList<Carte>();
+	private static ArrayList<Carte> carteList0 = new ArrayList<Carte>();
+	private static ArrayList<Carte> carteList1 = new ArrayList<Carte>();
+	private int numCarte;
 
-	public Carte(int id, String nom, double gain, Image image) {
+public Carte(int id, String nom, double gain, Image image,int numCarte ) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.gain = gain;
 		this.image = image;
-		Carte.carteList.add(this);
+		this.numCarte = numCarte;
+		
+		if (numCarte==0) {
+			Carte.carteList0.add(this);	
+		}
+		
+		else if (numCarte==1){
+			Carte.carteList1.add(this);	
+		}
 	}
 
 
@@ -70,29 +80,66 @@ public class Carte {
 	}
 	
 
-	public static ArrayList<Carte> getCarteList() {
-		return carteList;
+	
+	public static ArrayList<Carte> getCarteList0() {
+		return carteList0;
 	}
 
 
-	public static void setCarteList(ArrayList<Carte> carteList) {
-		Carte.carteList = carteList;
+
+	public static void setCarteList0(ArrayList<Carte> carteList0) {
+		Carte.carteList0 = carteList0;
 	}
 
- // COMPARAISON DE DEUX CARTES
 
+
+	public static ArrayList<Carte> getCarteList1() {
+		return carteList1;
+	}
+
+
+
+	public static void setCarteList1(ArrayList<Carte> carteList1) {
+		Carte.carteList1 = carteList1;
+	}
+
+
+
+	public int getNumCarte() {
+		return numCarte;
+	}
+
+
+
+	public void setNumCarte(int numCarte) {
+		this.numCarte = numCarte;
+	}
+
+
+
+/**
+ * Une méthode CompareCarte qui permet de comparer les symbol de deux  cartes 
+ * @param s1
+ * @param s2
+ * @return true or false
+ *
+ */
 	public static  boolean CompareCarte(Carte s1,Carte s2) {
 		
-		if (s1.equals(s2)) { 
+		if (s1.getImage().getNom().equals(s2.getImage().getNom())) { 
 			return true ;
 		}
 		else  return false;
 	}
-//mélange les cartes du jeu
+/**
+ * Une méthode melangeCarte qui permet de mélanger les cartes 
+ * @param p
+ */
 	public  static void  melangeCarte( Partie p) {
 	 Collections.shuffle(p.getCarteListpartie());
 		
 	};
+	
 	
 	public boolean isFoundcarte() {
 		return foundcarte;
@@ -102,26 +149,23 @@ public class Carte {
 		this.foundcarte = foundcarte;
 	}
 
-/**	public static Carte creationCarte(Image image) {
-		Carte c = null;
-		
-		//TODO
-		
-		return c;
-	}
+// Création des cartes 
 	
-*/	
-	public static final Carte carte1 = new Carte(0,"carte1",10,Image.image1);
-	public static final Carte carte2 = new Carte(1,"carte2",9,Image.image2);
-	public static final Carte carte3 = new Carte(2,"carte3",8,Image.image3);
-	public static final Carte carte4 = new Carte(3,"carte4",7,Image.image4);
-	public static final Carte carte5 = new Carte(4,"carte5",6,Image.image5);
-	public static final Carte carte6 = new Carte(5,"carte6",5,Image.image6);
-	public static final Carte carte7 = new Carte(6,"carte5",4,Image.image7);
-	public static final Carte carte8 = new Carte(7,"carte7",3,Image.image8);
-	
-	/**
-	 * @param args
-	 */
-	
+	public static final Carte carte1 = new Carte(0,"carte1",10,Image.image1,0);
+	public static final Carte carte2 = new Carte(1,"carte2",9,Image.image2,0);
+	public static final Carte carte3 = new Carte(2,"carte3",8,Image.image3,0);
+	public static final Carte carte4 = new Carte(3,"carte4",7,Image.image4,0);
+	public static final Carte carte5 = new Carte(4,"carte5",6,Image.image5,0);
+	public static final Carte carte6 = new Carte(5,"carte6",5,Image.image6,0);
+	public static final Carte carte7 = new Carte(6,"carte5",4,Image.image7,0);
+	public static final Carte carte8 = new Carte(7,"carte7",3,Image.image8,0);
+ 
+	public static final Carte carte1_1 = new Carte(0,"carte1",10,Image.image1,1);
+	public static final Carte carte2_1 = new Carte(1,"carte2",9,Image.image2,1);
+	public static final Carte carte3_1 = new Carte(2,"carte3",8,Image.image3,1);
+	public static final Carte carte4_1 = new Carte(3,"carte4",7,Image.image4,1);
+	public static final Carte carte5_1 = new Carte(4,"carte5",6,Image.image5,1);
+	public static final Carte carte6_1 = new Carte(5,"carte6",5,Image.image6,1);
+	public static final Carte carte7_1 = new Carte(6,"carte5",4,Image.image7,1);
+	public static final Carte carte8_1 = new Carte(7,"carte7",3,Image.image8,1);
 }

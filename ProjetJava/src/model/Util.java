@@ -13,7 +13,12 @@ public class Util {
 		String time = df.format(new Date(millis));
 		return time;
 		}
-//  type de message 	
+	/**
+	 *
+	 * @param message, type
+	 *  Une méthode print qui permet d'afficher les informations 
+	 *
+	 */
  public static void print( String message,int type) {
 	 if(type == 0){
 		 String time = Util.ticksToTime(System.currentTimeMillis());
