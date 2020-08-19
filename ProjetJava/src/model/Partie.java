@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public class Partie {
 	private int id;
-	private ArrayList<Joueur> listeJoueurs = new ArrayList<Joueur>(); 
+	private ArrayList<JoueurCarte> listeJoueurs = new ArrayList<JoueurCarte>(); 
 	private int tour = 1 ;
 	private long debutJeu;
 	private long finJeu;
@@ -19,17 +19,17 @@ public class Partie {
 	private ArrayList<Carte> carteListpartie = new ArrayList<Carte>();
 	@Deprecated
 
-	public Partie(int id, ArrayList<Joueur> listeJoueurs, long debutJeu) {
+	public Partie(int id, ArrayList<JoueurCarte> listeJoueurs, long debutJeu) {
 		super();
 		this.id = id;
 		this.listeJoueurs = listeJoueurs;
 		this.debutJeu = debutJeu;
 
 	}
-	public Partie(int id,Joueur[]listeJoueurs,long debutJeu ) {
+	public Partie(int id,JoueurCarte[]listeJoueurs,long debutJeu ) {
 		super();
 		this.id = id;
-		for(Joueur joueurs:listeJoueurs) {
+		for(JoueurCarte joueurs:listeJoueurs) {
 			this.listeJoueurs.add(joueurs);}
 		this.debutJeu = debutJeu;
 	}
@@ -43,12 +43,12 @@ public class Partie {
 	}
 
 
-	public ArrayList<Joueur> getListeJoueurs() {
+	public ArrayList<JoueurCarte> getListeJoueurs() {
 		return listeJoueurs;
 	}
 
 
-	public void setListeJoueurs(ArrayList<Joueur> listeJoueurs) {
+	public void setListeJoueurs(ArrayList<JoueurCarte> listeJoueurs) {
 		this.listeJoueurs = listeJoueurs;
 	}
 

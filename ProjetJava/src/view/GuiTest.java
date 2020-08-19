@@ -10,6 +10,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GuiTest {
 
@@ -30,6 +33,7 @@ public class GuiTest {
 	private JPanel panel14;
 	private JPanel panel15;
 	private JPanel panel16;
+	private JButton btnNewButton;
 	/**
 	 * Launch the application.
 	 */
@@ -189,6 +193,14 @@ public class GuiTest {
 		panel16.setBackground(UIManager.getColor("PasswordField.selectionForeground"));
 		panel16.setBounds(700,700, 150, 150);
 		frame.getContentPane().add(panel16);
+		
+		btnNewButton = new JButton("vos cartes gagnées");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnNewButton.setBounds(485, 151, 122, 44);
+		frame.getContentPane().add(btnNewButton);
 			
 	}
 	// ajouter un mouselistener sur les panel

@@ -2,19 +2,19 @@ package view;
 
 
 	import java.util.Observable;
-	import java.util.Observer;
+import java.util.Observer;
 
-	import javax.swing.JFrame;
+import javax.swing.JFrame;
 
-	import controller.Controller;
-	import model.Joueur;
+import controller.Controller;
+import model.JoueurCarte;
 
 	public class View extends JFrame implements Observer {
 
-		private Joueur model;
+		private JoueurCarte model;
 		protected Controller controller;
 
-		public View(Joueur model, Controller controller) {
+		public View(JoueurCarte model, Controller controller) {
 
 			this.model = model;
 			this.controller = controller;
@@ -24,14 +24,14 @@ package view;
 		/**
 		 * @return the model
 		 */
-		public Joueur getModel() {
+		public JoueurCarte getModel() {
 			return model;
 		}
 
 		/**
 		 * @param model the model to set
 		 */
-		public void setModel(Joueur model) {
+		public void setModel(JoueurCarte model) {
 			this.model = model;
 		}
 

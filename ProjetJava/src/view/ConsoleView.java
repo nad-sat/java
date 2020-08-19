@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 import controller.Controller;
 import model.Joueur;
+import model.JoueurCarte;
 
 public class ConsoleView extends View {
 	private Scanner scanner;
 
-	public ConsoleView(Joueur model, Controller controller) {
+	public ConsoleView(JoueurCarte model, Controller controller) {
 		super(model, controller);
 		scanner = new Scanner(System.in);
 		new Thread(new ReadInput()).start();

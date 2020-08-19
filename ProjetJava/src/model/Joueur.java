@@ -113,15 +113,15 @@ public class Joueur extends Observable {
 				this.getSelectionCarte().get(0).setFoundcarte(true);
 				this.getSelectionCarte().get(1).setFoundcarte(true);
 			//ajouter dans la liste des joueurs	
-				this.getCartes().addAll(this.getSelectionCarte());
-			 // supprimer tout de la sélection 
+				//this.getCartes().addAll(this.getSelectionCarte());
+				((JoueurCarte)this).getCarteJoueur().addAll(this.getSelectionCarte());			
 				this.getSelectionCarte().clear();
 				Util.print( "les deux cartes sont les même",0);
 				
 			}
 			else if (b==false) {
 				Util.print( "les deux cartes ne sont pas les même",0);
-				 for(Joueur j : Main.game.getListeJoueurs() ){
+				 for(JoueurCarte j : Main.game.getListeJoueurs() ){
 					 
 					 if (!j.equals(this)) {
 						 j.setJoueurAction(true);

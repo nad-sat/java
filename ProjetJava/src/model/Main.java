@@ -30,10 +30,11 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Joueur j1 = new Joueur(0, "Tom", new Carte[]{});
-		Joueur j2 = new Joueur(0, "Claude", new Carte[]{});		
+		JoueurCarte j1 = new JoueurCarte(0, "Tom", new Carte[]{});
+		JoueurCarte j2 = new JoueurCarte(0, "Claude", new Carte[]{});	
+		
 		//ajout des cartes dans la game
-		game  = new Partie(1,new Joueur[]{j1,j2},System.currentTimeMillis());
+		game  = new Partie(1,new JoueurCarte[]{j1,j2},System.currentTimeMillis());
 		game.getCarteListpartie().addAll(Carte.getCarteList0());
 		game.getCarteListpartie().addAll(Carte.getCarteList1());
 		

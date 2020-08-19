@@ -1,9 +1,10 @@
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
 import model.Carte;
 import model.Joueur;
+import model.JoueurCarte;
 import model.Main;
 import model.Partie;
 
@@ -15,7 +16,7 @@ class TestUnitaire {
 		Joueur j1 = new Joueur(0, "Tom", new Carte[]{});
 		Joueur j2 = new Joueur(0, "Claude", new Carte[]{});		
 		//ajout des cartes dans la game
-		Main.game  = new Partie(1,new Joueur[]{j1,j2},System.currentTimeMillis());
+		Main.game  = new Partie(1,new JoueurCarte[]{(JoueurCarte) j1,(JoueurCarte)j2},System.currentTimeMillis());
 		
 		Main.game.getCarteListpartie().add(Carte.carte1	);
 		Main.game.getCarteListpartie().add(Carte.carte1_1);
@@ -27,10 +28,10 @@ class TestUnitaire {
 	@Test
 	void test2() {
 		
-		Joueur j1 = new Joueur(0, "Tom", new Carte[]{});
-		Joueur j2 = new Joueur(0, "Claude", new Carte[]{});		
+		JoueurCarte j1 = new JoueurCarte(0, "Tom", new Carte[]{});
+		JoueurCarte j2 = new JoueurCarte(0, "Claude", new Carte[]{});		
 		//ajout des cartes dans la game
-		Main.game  = new Partie(1,new Joueur[]{j1,j2},System.currentTimeMillis());
+		Main.game  = new Partie(1,new JoueurCarte[]{(JoueurCarte) j1,(JoueurCarte) j2},System.currentTimeMillis());
 		
 		Main.game.getCarteListpartie().add(Carte.carte1	);
 		Main.game.getCarteListpartie().add(Carte.carte1_1);

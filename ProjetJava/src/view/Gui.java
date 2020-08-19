@@ -1,9 +1,12 @@
 package view;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -12,6 +15,7 @@ import javax.swing.border.LineBorder;
 import controller.Controller;
 import model.Carte;
 import model.Joueur;
+import model.JoueurCarte;
 import model.Main;
 
 public class Gui extends View {
@@ -33,9 +37,9 @@ public class Gui extends View {
 	private JPanel panel14;
 	private JPanel panel15;
 	private JPanel panel16;
+	private JButton btnNewButton;
 	
-	
-	public Gui(Joueur model, Controller controller) {
+	public Gui(JoueurCarte model, Controller controller) {
 		super(model, controller);
 		
 		
@@ -190,6 +194,15 @@ public class Gui extends View {
 		panel16.setBounds(700,700, 150, 150);
 		this.getContentPane().add(panel16);
 		Gui.clickbouton(this, panel16, 15);
+		
+		btnNewButton = new JButton("vos cartes gagnées");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				model.generecarte();}
+		});
+		btnNewButton.setBounds(485, 151, 122, 44);
+		this.getContentPane().add(btnNewButton);
+		
 			
 		
 	}
